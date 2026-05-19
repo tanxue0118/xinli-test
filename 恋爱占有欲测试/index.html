@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>恋爱占有欲指数测试 - 你有多爱TA？</title>
+  <meta name="description" content="通过30道题目，测试你在恋爱中的占有欲指数，了解你对伴侣的态度。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="home-page" class="page active">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-icon"> </div>
+        <h1>恋爱占有欲指数测试</h1>
+        <p class="subtitle">了解你在恋爱中的占有欲程度</p>
+      </div>
+      
+      <div class="intro-card">
+        <h2>什么是占有欲？</h2>
+        <p>占有欲是指在恋爱关系中，对伴侣的独占欲望和控制倾向。适度的占有欲是爱的表现，但过度的占有欲可能会给双方带来压力。</p>
+        <p>了解自己的占有欲程度，可以帮助你：</p>
+        <ul>
+          <li>更好地理解自己的情感需求</li>
+          <li>建立更健康的亲密关系</li>
+          <li>学会在爱与自由之间找到平衡</li>
+        </ul>
+      </div>
+
+      <div class="levels-preview">
+        <h2>四种占有欲程度</h2>
+        <div class="levels-grid">
+          <div class="level-card" style="border-bottom-color: #10b981;">
+            <div class="level-icon"> </div>
+            <h3>低度占有</h3>
+            <p>信任尊重，给予自由</p>
+          </div>
+          <div class="level-card" style="border-bottom-color: #f59e0b;">
+            <div class="level-icon"> </div>
+            <h3>中度占有</h3>
+            <p>关心在意，适度嫉妒</p>
+          </div>
+          <div class="level-card" style="border-bottom-color: #f97316;">
+            <div class="level-icon"> </div>
+            <h3>较强占有</h3>
+            <p>强烈在乎，容易吃醋</p>
+          </div>
+          <div class="level-card" style="border-bottom-color: #ef4444;">
+            <div class="level-icon"> </div>
+            <h3>高度占有</h3>
+            <p>极度独占，控制欲强</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-info">
+        <div class="info-item">
+          <span class="info-number">30</span>
+          <span class="info-label">道题目</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">6</span>
+          <span class="info-label">分钟</span>
+        </div>
+      </div>
+
+      <button class="btn-start" onclick="startTest()">开始测试</button>
+      
+      <p class="disclaimer">本测试仅供参考，不构成专业心理诊断</p>
+    </div>
+  </div>
+
+  <div id="test-page" class="page">
+    <div class="container">
+      <div class="test-header">
+        <div class="progress-info">
+          <span id="question-counter">1 / 30</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <div class="question-number" id="question-number">第 1 题</div>
+        <div class="question-text" id="question-text"></div>
+        <div class="options-container" id="options-container"></div>
+      </div>
+
+      <div class="test-navigation">
+        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>上一题</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-page" class="page">
+    <div class="container">
+      <div class="result-header">
+        <h1>测试结果</h1>
+      </div>
+
+      <div class="score-card">
+        <div class="score-label">你的占有欲指数</div>
+        <div class="score-display">
+          <span class="score-value" id="score-value">0</span>
+          <span class="score-max">/ 120</span>
+        </div>
+        <div class="score-bar-container">
+          <div class="score-bar" id="score-bar"></div>
+        </div>
+        <div class="score-level" id="score-level"></div>
+      </div>
+
+      <div class="result-type-card" id="result-type-card">
+        <div class="result-icon" id="result-icon"></div>
+        <h2 id="result-level-name"></h2>
+        <p id="result-desc"></p>
+      </div>
+
+      <div class="traits-section">
+        <h2>你的特点</h2>
+        <ul id="traits-list"></ul>
+      </div>
+
+      <div class="advice-section">
+        <h2>建议</h2>
+        <ul id="advice-list"></ul>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-restart" onclick="restartTest()">重新测试</button>
+        <button class="btn-share" onclick="shareResult()">分享结果</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
