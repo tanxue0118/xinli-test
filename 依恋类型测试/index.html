@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>依恋类型测试 - 了解你的情感关系模式</title>
+  <meta name="description" content="通过35道专业测评题目，深入了解你的依恋类型，揭示你在亲密关系中的行为模式和情感特质。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- 首页 -->
+  <div id="home-page" class="page active">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-icon"> </div>
+        <h1>依恋类型测试</h1>
+        <p class="subtitle">深入了解自我依恋模式，揭示你的情感关系特质</p>
+      </div>
+      
+      <div class="intro-card">
+        <h2>什么是依恋类型？</h2>
+        <p>依恋理论认为，我们在童年时期与主要照顾者形成的情感纽带模式，会影响我们在成年亲密关系中的行为和感受。</p>
+        <p>了解自己的依恋类型，可以帮助你：</p>
+        <ul>
+          <li>理解自己在关系中的行为模式</li>
+          <li>识别潜在的关系挑战</li>
+          <li>建立更健康、更满意的亲密关系</li>
+        </ul>
+      </div>
+
+      <div class="types-preview">
+        <h2>四种依恋类型</h2>
+        <div class="types-grid">
+          <div class="type-card secure">
+            <div class="type-icon"> </div>
+            <h3>安全型</h3>
+            <p>自在地建立亲密关系，信任伴侣</p>
+          </div>
+          <div class="type-card anxious">
+            <div class="type-icon"> </div>
+            <h3>焦虑型</h3>
+            <p>渴望亲密，担心被抛弃</p>
+          </div>
+          <div class="type-card avoidant">
+            <div class="type-icon"> </div>
+            <h3>回避型</h3>
+            <p>重视独立，保持情感距离</p>
+          </div>
+          <div class="type-card fearful">
+            <div class="type-icon"> </div>
+            <h3>恐惧型</h3>
+            <p>既渴望亲密又害怕受伤</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-info">
+        <div class="info-item">
+          <span class="info-number">35</span>
+          <span class="info-label">道题目</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">10</span>
+          <span class="info-label">分钟</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">4</span>
+          <span class="info-label">种类型</span>
+        </div>
+      </div>
+
+      <button class="btn-start" onclick="startTest()">开始测评</button>
+      
+      <p class="disclaimer">本测评仅供参考，如需专业帮助请咨询心理咨询师</p>
+    </div>
+  </div>
+
+  <!-- 测评页 -->
+  <div id="test-page" class="page">
+    <div class="container">
+      <div class="test-header">
+        <div class="progress-info">
+          <span id="question-counter">1 / 35</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <div class="question-number" id="question-number">第 1 题</div>
+        <div class="question-text" id="question-text"></div>
+        <div class="options-container" id="options-container">
+          <!-- Options will be dynamically generated -->
+        </div>
+      </div>
+
+      <div class="test-navigation">
+        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>上一题</button>
+        <button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>下一题</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 结果页 -->
+  <div id="result-page" class="page">
+    <div class="container">
+      <div class="result-header">
+        <h1>测评结果</h1>
+      </div>
+
+      <div class="result-type-card" id="result-type-card">
+        <div class="result-icon" id="result-icon"></div>
+        <h2 id="result-type-name"></h2>
+        <p id="result-type-desc"></p>
+      </div>
+
+      <div class="radar-section">
+        <h2>五维度分析</h2>
+        <div class="radar-container">
+          <canvas id="radar-chart"></canvas>
+        </div>
+      </div>
+
+      <div class="dimensions-section">
+        <h2>各维度详情</h2>
+        <div id="dimensions-detail">
+          <!-- Dimensions will be dynamically generated -->
+        </div>
+      </div>
+
+      <div class="characteristics-section">
+        <h2>你的特点</h2>
+        <ul id="characteristics-list">
+          <!-- Characteristics will be dynamically generated -->
+        </ul>
+      </div>
+
+      <div class="advice-section">
+        <h2>成长建议</h2>
+        <ul id="advice-list">
+          <!-- Advice will be dynamically generated -->
+        </ul>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-restart" onclick="restartTest()">重新测评</button>
+        <button class="btn-share" onclick="shareResult()">分享结果</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

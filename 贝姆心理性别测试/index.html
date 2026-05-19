@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贝姆心理性别角色测试 - 了解你的性别特质</title>
+  <meta name="description" content="通过60道专业测评题目，了解你的心理性别角色类型，发现你的性别特质。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="home-page" class="page active">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-icon">⚧️</div>
+        <h1>贝姆心理性别角色测试</h1>
+        <p class="subtitle">了解你的心理性别特质，发现真实的自己</p>
+      </div>
+      
+      <div class="intro-card">
+        <h2>什么是贝姆心理性别角色测试？</h2>
+        <p>贝姆心理性别角色测试（BSRI）是由心理学家Sandra Bem于1974年开发的经典测试。它通过评估你具有的性格特质，来确定你的心理性别角色类型。</p>
+        <p>每个人都有男性化和女性化的特质，了解这些特质可以帮助你：</p>
+        <ul>
+          <li>认识自己的性格特点</li>
+          <li>发挥自己的优势</li>
+          <li>更好地与他人相处</li>
+        </ul>
+      </div>
+
+      <div class="types-preview">
+        <h2>四种性别角色类型</h2>
+        <div class="types-grid">
+          <div class="type-card" style="border-bottom-color: #3b82f6;">
+            <div class="type-icon">♂️</div>
+            <h3>男性化</h3>
+            <p>独立、果断、有领导力</p>
+          </div>
+          <div class="type-card" style="border-bottom-color: #ec4899;">
+            <div class="type-icon">♀️</div>
+            <h3>女性化</h3>
+            <p>温柔、体贴、有同理心</p>
+          </div>
+          <div class="type-card" style="border-bottom-color: #8b5cf6;">
+            <div class="type-icon">⚧️</div>
+            <h3>双性化</h3>
+            <p>兼具男性和女性特质</p>
+          </div>
+          <div class="type-card" style="border-bottom-color: #6b7280;">
+            <div class="type-icon">⚪</div>
+            <h3>未分化</h3>
+            <p>特质不太明显</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-info">
+        <div class="info-item">
+          <span class="info-number">60</span>
+          <span class="info-label">道题目</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">15</span>
+          <span class="info-label">分钟</span>
+        </div>
+      </div>
+
+      <button class="btn-start" onclick="startTest()">开始测评</button>
+      
+      <p class="disclaimer">本测评仅供参考，不构成专业心理诊断</p>
+    </div>
+  </div>
+
+  <div id="test-page" class="page">
+    <div class="container">
+      <div class="test-header">
+        <div class="progress-info">
+          <span id="question-counter">1 / 60</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <div class="question-number" id="question-number">第 1 题</div>
+        <div class="question-text" id="question-text"></div>
+        <div class="scale-container" id="scale-container">
+          <div class="scale-label">完全不符合</div>
+          <div class="scale-buttons" id="scale-buttons"></div>
+          <div class="scale-label">完全符合</div>
+        </div>
+      </div>
+
+      <div class="test-navigation">
+        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>上一题</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-page" class="page">
+    <div class="container">
+      <div class="result-header">
+        <h1>测试结果</h1>
+      </div>
+
+      <div class="result-type-card" id="result-type-card">
+        <div class="result-icon" id="result-icon"></div>
+        <h2 id="result-type-name"></h2>
+        <p id="result-type-desc"></p>
+      </div>
+
+      <div class="scores-section">
+        <h2>你的性别特质分数</h2>
+        <div class="scores-display">
+          <div class="score-item masculine">
+            <div class="score-label">男性化特质</div>
+            <div class="score-value" id="masculine-score">0</div>
+            <div class="score-bar-container">
+              <div class="score-bar" id="masculine-bar"></div>
+            </div>
+          </div>
+          <div class="score-item feminine">
+            <div class="score-label">女性化特质</div>
+            <div class="score-value" id="feminine-score">0</div>
+            <div class="score-bar-container">
+              <div class="score-bar" id="feminine-bar"></div>
+            </div>
+          </div>
+        </div>
+        <div class="score-legend">
+          <span>1分 = 完全不符合</span>
+          <span>4分 = 不确定</span>
+          <span>7分 = 完全符合</span>
+        </div>
+      </div>
+
+      <div class="traits-section">
+        <h2>你的核心特质</h2>
+        <ul id="traits-list"></ul>
+      </div>
+
+      <div class="sw-section">
+        <div class="sw-card strengths">
+          <h2>优势</h2>
+          <ul id="strengths-list"></ul>
+        </div>
+        <div class="sw-card advice">
+          <h2>建议</h2>
+          <ul id="advice-list"></ul>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-restart" onclick="restartTest()">重新测评</button>
+        <button class="btn-share" onclick="shareResult()">分享结果</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

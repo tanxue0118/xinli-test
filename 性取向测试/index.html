@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>性取向测试 - 了解真实的自己</title>
+  <meta name="description" content="通过30道专业测评题目，了解你的性取向，探索真实的自己。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="home-page" class="page active">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-icon"> </div>
+        <h1>性取向测试</h1>
+        <p class="subtitle">了解真实的自己，接纳内心的呼唤</p>
+      </div>
+      
+      <div class="intro-card">
+        <h2>什么是性取向？</h2>
+        <p>性取向是指一个人在情感、浪漫和性方面被哪种性别的人所吸引。性取向是多样的，包括异性恋、同性恋、双性恋、泛性恋、无性恋等。</p>
+        <p>了解自己的性取向，可以帮助你：</p>
+        <ul>
+          <li>更好地认识自己的情感需求</li>
+          <li>建立更真实的亲密关系</li>
+          <li>接纳和理解真实的自己</li>
+        </ul>
+      </div>
+
+      <div class="orientations-preview">
+        <h2>性取向是多样的</h2>
+        <div class="orientations-grid">
+          <div class="orientation-card" style="border-bottom-color: #3b82f6;">
+            <div class="orientation-icon"> </div>
+            <h3>异性恋</h3>
+            <p>被异性吸引</p>
+          </div>
+          <div class="orientation-card" style="border-bottom-color: #8b5cf6;">
+            <div class="orientation-icon"> </div>
+            <h3>同性恋</h3>
+            <p>被同性吸引</p>
+          </div>
+          <div class="orientation-card" style="border-bottom-color: #ec4899;">
+            <div class="orientation-icon"> </div>
+            <h3>双性恋</h3>
+            <p>可能被两种性别吸引</p>
+          </div>
+          <div class="orientation-card" style="border-bottom-color: #f59e0b;">
+            <div class="orientation-icon"> </div>
+            <h3>泛性恋</h3>
+            <p>性别不影响吸引</p>
+          </div>
+          <div class="orientation-card" style="border-bottom-color: #10b981;">
+            <div class="orientation-icon"> </div>
+            <h3>无性恋</h3>
+            <p>很少或没有性吸引</p>
+          </div>
+          <div class="orientation-card" style="border-bottom-color: #6b7280;">
+            <div class="orientation-icon">❓</div>
+            <h3>探索中</h3>
+            <p>还在了解自己</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-info">
+        <div class="info-item">
+          <span class="info-number">30</span>
+          <span class="info-label">道题目</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">8</span>
+          <span class="info-label">分钟</span>
+        </div>
+      </div>
+
+      <button class="btn-start" onclick="startTest()">开始测评</button>
+      
+      <div class="disclaimer-section">
+        <p class="disclaimer">本测评仅供参考，性取向是个人的内在体验，只有你自己最了解自己</p>
+        <p class="disclaimer">无论结果如何，你的感受都是真实的、有效的</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="test-page" class="page">
+    <div class="container">
+      <div class="test-header">
+        <div class="progress-info">
+          <span id="question-counter">1 / 30</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <div class="question-number" id="question-number">第 1 题</div>
+        <div class="question-text" id="question-text"></div>
+        <div class="options-container" id="options-container"></div>
+      </div>
+
+      <div class="test-navigation">
+        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>上一题</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-page" class="page">
+    <div class="container">
+      <div class="result-header">
+        <h1>测试结果</h1>
+      </div>
+
+      <div class="result-type-card" id="result-type-card">
+        <div class="result-icon" id="result-icon"></div>
+        <h2 id="result-type-name"></h2>
+        <p id="result-type-desc"></p>
+      </div>
+
+      <div class="scores-section">
+        <h2>各维度得分</h2>
+        <div id="scores-detail"></div>
+      </div>
+
+      <div class="traits-section">
+        <h2>你的特点</h2>
+        <ul id="traits-list"></ul>
+      </div>
+
+      <div class="advice-section">
+        <h2>建议</h2>
+        <ul id="advice-list"></ul>
+      </div>
+
+      <div class="acceptance-section">
+        <div class="acceptance-card">
+          <div class="acceptance-icon"> </div>
+          <h3>接纳自己</h3>
+          <p>无论你的性取向是什么，都是正常的、自然的。重要的是接纳真实的自己，找到让自己幸福的方式。</p>
+        </div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-restart" onclick="restartTest()">重新测评</button>
+        <button class="btn-share" onclick="shareResult()">分享结果</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

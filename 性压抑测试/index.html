@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>性压抑测试 - 了解你对性的态度</title>
+  <meta name="description" content="通过25道专业测评题目，了解你的性压抑程度，探索你对性的态度和感受。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="home-page" class="page active">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-icon"> </div>
+        <h1>性压抑测试</h1>
+        <p class="subtitle">探索你对性的态度，了解内心的压抑程度</p>
+      </div>
+      
+      <div class="intro-card">
+        <h2>什么是性压抑？</h2>
+        <p>性压抑是指个体对性欲望、性需求和性表达的限制和压制。它可能源于文化、宗教、家庭教育或个人经历，影响着我们对性的态度和亲密关系的质量。</p>
+        <p>了解自己的性压抑程度，可以帮助你：</p>
+        <ul>
+          <li>认识自己对性的真实态度</li>
+          <li>理解亲密关系中的困扰</li>
+          <li>建立更健康的性观念</li>
+        </ul>
+      </div>
+
+      <div class="types-preview">
+        <h2>三种压抑程度</h2>
+        <div class="types-grid">
+          <div class="type-card low">
+            <div class="type-icon"> </div>
+            <h3>低度压抑</h3>
+            <p>对性持开放、自然的态度</p>
+          </div>
+          <div class="type-card medium">
+            <div class="type-icon"> </div>
+            <h3>中度压抑</h3>
+            <p>对性有一定保留但能接受</p>
+          </div>
+          <div class="type-card high">
+            <div class="type-icon"> </div>
+            <h3>高度压抑</h3>
+            <p>对性有较强的羞耻和回避</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-info">
+        <div class="info-item">
+          <span class="info-number">25</span>
+          <span class="info-label">道题目</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">8</span>
+          <span class="info-label">分钟</span>
+        </div>
+      </div>
+
+      <button class="btn-start" onclick="startTest()">开始测评</button>
+      
+      <p class="disclaimer">本测评仅供参考，如需专业帮助请咨询心理咨询师</p>
+    </div>
+  </div>
+
+  <div id="test-page" class="page">
+    <div class="container">
+      <div class="test-header">
+        <div class="progress-info">
+          <span id="question-counter">1 / 25</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <div class="question-number" id="question-number">第 1 题</div>
+        <div class="question-text" id="question-text"></div>
+        <div class="options-container" id="options-container"></div>
+      </div>
+
+      <div class="test-navigation">
+        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>上一题</button>
+        <button class="btn-next" id="btn-next" onclick="nextQuestion()" disabled>下一题</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-page" class="page">
+    <div class="container">
+      <div class="result-header">
+        <h1>测评结果</h1>
+      </div>
+
+      <div class="result-type-card" id="result-type-card">
+        <div class="result-icon" id="result-icon"></div>
+        <h2 id="result-type-name"></h2>
+        <p id="result-type-desc"></p>
+      </div>
+
+      <div class="score-section">
+        <h2>压抑程度</h2>
+        <div class="score-display">
+          <span class="score-percent" id="score-percent">0%</span>
+          <span class="score-level" id="score-level"></span>
+        </div>
+        <div class="score-bar-container">
+          <div class="score-bar" id="score-fill"></div>
+        </div>
+        <div class="score-labels">
+          <span>低</span>
+          <span>中</span>
+          <span>高</span>
+        </div>
+      </div>
+
+      <div class="characteristics-section">
+        <h2>你的特点</h2>
+        <ul id="characteristics-list"></ul>
+      </div>
+
+      <div class="advice-section">
+        <h2>成长建议</h2>
+        <ul id="advice-list"></ul>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-restart" onclick="restartTest()">重新测评</button>
+        <button class="btn-share" onclick="shareResult()">分享结果</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

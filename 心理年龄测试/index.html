@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>心理年龄测试 - 你的心智有多成熟？</title>
+  <meta name="description" content="通过30道专业测评题目，了解你的心理年龄，探索你的心智成熟度。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="home-page" class="page active">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-icon"> </div>
+        <h1>心理年龄测试</h1>
+        <p class="subtitle">探索你的心智成熟度，发现真实的自己</p>
+      </div>
+      
+      <div class="intro-card">
+        <h2>什么是心理年龄？</h2>
+        <p>心理年龄是指一个人的心理成熟程度，它可能与实际年龄不同。心理年龄反映了你在情绪管理、责任感、社交能力、独立性等方面的成熟度。</p>
+        <p>了解自己的心理年龄，可以帮助你：</p>
+        <ul>
+          <li>认识自己的心智成熟度</li>
+          <li>发现需要成长的方面</li>
+          <li>更好地理解自己和他人</li>
+        </ul>
+      </div>
+
+      <div class="preview-section">
+        <h2>测试内容</h2>
+        <div class="preview-grid">
+          <div class="preview-card">
+            <div class="preview-icon"> </div>
+            <h3>情绪成熟度</h3>
+            <p>你如何管理自己的情绪</p>
+          </div>
+          <div class="preview-card">
+            <div class="preview-icon"> </div>
+            <h3>责任感</h3>
+            <p>你如何承担责任</p>
+          </div>
+          <div class="preview-card">
+            <div class="preview-icon"> </div>
+            <h3>社交能力</h3>
+            <p>你如何与他人相处</p>
+          </div>
+          <div class="preview-card">
+            <div class="preview-icon"> </div>
+            <h3>独立性</h3>
+            <p>你如何独立思考和行动</p>
+          </div>
+          <div class="preview-card">
+            <div class="preview-icon"> </div>
+            <h3>抗压能力</h3>
+            <p>你如何应对压力和挑战</p>
+          </div>
+          <div class="preview-card">
+            <div class="preview-icon"> </div>
+            <h3>人生观</h3>
+            <p>你对人生的态度和理解</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-info">
+        <div class="info-item">
+          <span class="info-number">30</span>
+          <span class="info-label">道题目</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">6</span>
+          <span class="info-label">分钟</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">6</span>
+          <span class="info-label">个维度</span>
+        </div>
+      </div>
+
+      <div class="age-input-section">
+        <h2>请输入你的实际年龄</h2>
+        <div class="age-input-wrapper">
+          <input type="number" id="actual-age" min="10" max="80" placeholder="例如：25" class="age-input">
+          <span class="age-unit">岁</span>
+        </div>
+      </div>
+
+      <button class="btn-start" onclick="startTest()">开始测评</button>
+      
+      <p class="disclaimer">本测评仅供参考，如需专业帮助请咨询心理咨询师</p>
+    </div>
+  </div>
+
+  <div id="test-page" class="page">
+    <div class="container">
+      <div class="test-header">
+        <div class="progress-info">
+          <span id="question-counter">1 / 30</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <div class="question-number" id="question-number">第 1 题</div>
+        <div class="question-text" id="question-text"></div>
+        <div class="options-container" id="options-container"></div>
+      </div>
+
+      <div class="test-navigation">
+        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>上一题</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-page" class="page">
+    <div class="container">
+      <div class="result-header">
+        <h1>测评结果</h1>
+      </div>
+
+      <div class="age-comparison-card">
+        <div class="age-display">
+          <div class="age-item">
+            <div class="age-label">实际年龄</div>
+            <div class="age-value" id="actual-age-display">25</div>
+            <div class="age-unit-display">岁</div>
+          </div>
+          <div class="age-divider">
+            <div class="age-arrow">→</div>
+          </div>
+          <div class="age-item">
+            <div class="age-label">心理年龄</div>
+            <div class="age-value highlight" id="psych-age-display">28</div>
+            <div class="age-unit-display">岁</div>
+          </div>
+        </div>
+        <div class="age-difference" id="age-difference"></div>
+        <div class="age-label-text" id="age-label-text"></div>
+      </div>
+
+      <div class="age-bar-section">
+        <h2>心理年龄范围</h2>
+        <div class="age-bar-container">
+          <div class="age-bar">
+            <div class="age-bar-fill" id="age-bar-fill"></div>
+            <div class="age-bar-marker" id="age-bar-marker"></div>
+          </div>
+          <div class="age-bar-labels">
+            <span>12岁</span>
+            <span>16岁</span>
+            <span>20岁</span>
+            <span>28岁</span>
+            <span>35岁</span>
+            <span>45岁</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-desc-card">
+        <p id="result-description"></p>
+      </div>
+
+      <div class="dimensions-section">
+        <h2>各维度分析</h2>
+        <div id="dimensions-detail"></div>
+      </div>
+
+      <div class="advice-section">
+        <h2>成长建议</h2>
+        <ul id="advice-list"></ul>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-restart" onclick="restartTest()">重新测评</button>
+        <button class="btn-share" onclick="shareResult()">分享结果</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

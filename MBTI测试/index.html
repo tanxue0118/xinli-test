@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MBTI人格测试 - 发现你的人格类型</title>
+  <meta name="description" content="通过专业的MBTI测试，了解你的16种人格类型，发现你的性格特点和潜力。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="home-page" class="page active">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-icon"> </div>
+        <h1>MBTI人格测试</h1>
+        <p class="subtitle">发现你的人格类型，了解真实的自己</p>
+      </div>
+      
+      <div class="intro-card">
+        <h2>什么是MBTI？</h2>
+        <p>MBTI（迈尔斯-布里格斯类型指标）是一种广泛使用的人格类型评估工具，基于卡尔·荣格的心理类型理论。它通过四个维度来描述人格类型：</p>
+        <div class="dimensions-grid">
+          <div class="dimension-item">
+            <div class="dimension-pair">
+              <span class="dim-letter">E</span>
+              <span class="dim-vs">vs</span>
+              <span class="dim-letter">I</span>
+            </div>
+            <div class="dim-name">外向 - 内向</div>
+            <div class="dim-desc">精力来源</div>
+          </div>
+          <div class="dimension-item">
+            <div class="dimension-pair">
+              <span class="dim-letter">S</span>
+              <span class="dim-vs">vs</span>
+              <span class="dim-letter">N</span>
+            </div>
+            <div class="dim-name">感觉 - 直觉</div>
+            <div class="dim-desc">信息获取</div>
+          </div>
+          <div class="dimension-item">
+            <div class="dimension-pair">
+              <span class="dim-letter">T</span>
+              <span class="dim-vs">vs</span>
+              <span class="dim-letter">F</span>
+            </div>
+            <div class="dim-name">思考 - 情感</div>
+            <div class="dim-desc">决策方式</div>
+          </div>
+          <div class="dimension-item">
+            <div class="dimension-pair">
+              <span class="dim-letter">J</span>
+              <span class="dim-vs">vs</span>
+              <span class="dim-letter">P</span>
+            </div>
+            <div class="dim-name">判断 - 知觉</div>
+            <div class="dim-desc">生活方式</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="versions-section">
+        <h2>选择测试版本</h2>
+        <div class="versions-grid">
+          <div class="version-card" onclick="startTest('short')">
+            <div class="version-icon"> </div>
+            <h3>简约版</h3>
+            <div class="version-info">
+              <span class="version-questions">36题</span>
+              <span class="version-time">约8分钟</span>
+            </div>
+            <p>快速了解你的人格类型，适合时间有限的情况</p>
+            <button class="btn-version">开始测试</button>
+          </div>
+          <div class="version-card featured" onclick="startTest('long')">
+            <div class="version-badge">推荐</div>
+            <div class="version-icon"> </div>
+            <h3>详细版</h3>
+            <div class="version-info">
+              <span class="version-questions">120题</span>
+              <span class="version-time">约25分钟</span>
+            </div>
+            <p>更全面、更准确的人格分析，结果更可靠</p>
+            <button class="btn-version">开始测试</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="types-preview">
+        <h2>16种人格类型</h2>
+        <div class="types-grid">
+          <div class="type-badge analyst">INTJ</div>
+          <div class="type-badge analyst">INTP</div>
+          <div class="type-badge analyst">ENTJ</div>
+          <div class="type-badge analyst">ENTP</div>
+          <div class="type-badge diplomat">INFJ</div>
+          <div class="type-badge diplomat">INFP</div>
+          <div class="type-badge diplomat">ENFJ</div>
+          <div class="type-badge diplomat">ENFP</div>
+          <div class="type-badge sentinel">ISTJ</div>
+          <div class="type-badge sentinel">ISFJ</div>
+          <div class="type-badge sentinel">ESTJ</div>
+          <div class="type-badge sentinel">ESFJ</div>
+          <div class="type-badge explorer">ISTP</div>
+          <div class="type-badge explorer">ISFP</div>
+          <div class="type-badge explorer">ESTP</div>
+          <div class="type-badge explorer">ESFP</div>
+        </div>
+      </div>
+
+      <p class="disclaimer">本测试仅供参考，如需专业评估请咨询心理学专业人士</p>
+    </div>
+  </div>
+
+  <div id="test-page" class="page">
+    <div class="container">
+      <div class="test-header">
+        <div class="progress-info">
+          <span id="question-counter">1 / 24</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <div class="question-number" id="question-number">第 1 题</div>
+        <div class="question-text" id="question-text"></div>
+        <div class="options-container" id="options-container">
+          <button class="option-btn" id="option-a" onclick="selectOption('A')">
+            <div class="option-letter">A</div>
+            <div class="option-text" id="option-a-text"></div>
+          </button>
+          <button class="option-btn" id="option-b" onclick="selectOption('B')">
+            <div class="option-letter">B</div>
+            <div class="option-text" id="option-b-text"></div>
+          </button>
+        </div>
+      </div>
+
+      <div class="test-navigation">
+        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>上一题</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-page" class="page">
+    <div class="container">
+      <div class="result-header">
+        <h1>你的人格类型是</h1>
+      </div>
+
+      <div class="result-type-card" id="result-type-card">
+        <div class="result-type-code" id="result-type-code"></div>
+        <h2 id="result-type-name"></h2>
+        <p id="result-type-desc"></p>
+      </div>
+
+      <div class="dimensions-result">
+        <h2>你的维度偏好</h2>
+        <div class="dimensions-bars">
+          <div class="dim-bar-item">
+            <div class="dim-bar-labels">
+              <span class="dim-bar-label" id="dim-e-label">E 外向</span>
+              <span class="dim-bar-label" id="dim-i-label">I 内向</span>
+            </div>
+            <div class="dim-bar-container">
+              <div class="dim-bar" id="dim-ei-bar"></div>
+            </div>
+            <div class="dim-bar-percent">
+              <span id="dim-e-percent">50%</span>
+              <span id="dim-i-percent">50%</span>
+            </div>
+          </div>
+          <div class="dim-bar-item">
+            <div class="dim-bar-labels">
+              <span class="dim-bar-label" id="dim-s-label">S 感觉</span>
+              <span class="dim-bar-label" id="dim-n-label">N 直觉</span>
+            </div>
+            <div class="dim-bar-container">
+              <div class="dim-bar" id="dim-sn-bar"></div>
+            </div>
+            <div class="dim-bar-percent">
+              <span id="dim-s-percent">50%</span>
+              <span id="dim-n-percent">50%</span>
+            </div>
+          </div>
+          <div class="dim-bar-item">
+            <div class="dim-bar-labels">
+              <span class="dim-bar-label" id="dim-t-label">T 思考</span>
+              <span class="dim-bar-label" id="dim-f-label">F 情感</span>
+            </div>
+            <div class="dim-bar-container">
+              <div class="dim-bar" id="dim-tf-bar"></div>
+            </div>
+            <div class="dim-bar-percent">
+              <span id="dim-t-percent">50%</span>
+              <span id="dim-f-percent">50%</span>
+            </div>
+          </div>
+          <div class="dim-bar-item">
+            <div class="dim-bar-labels">
+              <span class="dim-bar-label" id="dim-j-label">J 判断</span>
+              <span class="dim-bar-label" id="dim-p-label">P 知觉</span>
+            </div>
+            <div class="dim-bar-container">
+              <div class="dim-bar" id="dim-jp-bar"></div>
+            </div>
+            <div class="dim-bar-percent">
+              <span id="dim-j-percent">50%</span>
+              <span id="dim-p-percent">50%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="traits-section">
+        <h2>核心特质</h2>
+        <div class="traits-grid" id="traits-grid"></div>
+      </div>
+
+      <div class="sw-section">
+        <div class="sw-card strengths">
+          <h2>优势</h2>
+          <ul id="strengths-list"></ul>
+        </div>
+        <div class="sw-card weaknesses">
+          <h2>劣势</h2>
+          <ul id="weaknesses-list"></ul>
+        </div>
+      </div>
+
+      <div class="careers-section">
+        <h2>适合的职业</h2>
+        <div class="careers-grid" id="careers-grid"></div>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-restart" onclick="restartTest()">重新测试</button>
+        <button class="btn-share" onclick="shareResult()">分享结果</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
