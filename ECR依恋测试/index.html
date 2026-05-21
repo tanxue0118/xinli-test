@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ECR亲密关系经历量表 - 了解你的依恋类型</title>
+  <meta name="description" content="通过36道专业测评题目，基于ECR亲密关系经历量表，了解你的依恋类型：安全型、恐惧型、专注型、冷漠型。">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="home-page" class="page active">
+    <div class="container">
+      <div class="hero">
+        <div class="hero-icon"> </div>
+        <h1>亲密关系经历量表</h1>
+        <p class="subtitle">了解你在亲密关系中的依恋模式</p>
+        <p class="test-name-en">ECR - Experiences in Close Relationships</p>
+      </div>
+      
+      <div class="intro-card">
+        <h2>什么是依恋类型？</h2>
+        <p>依恋理论认为，我们在童年时期与主要照顾者形成的情感纽带模式，会影响我们在成年亲密关系中的行为和感受。ECR量表是评估成人依恋类型的专业工具。</p>
+        <p>了解自己的依恋类型，可以帮助你：</p>
+        <ul>
+          <li>理解自己在关系中的行为模式</li>
+          <li>识别潜在的关系挑战</li>
+          <li>建立更健康、更满意的亲密关系</li>
+        </ul>
+      </div>
+
+      <div class="types-preview">
+        <h2>四种依恋类型</h2>
+        <div class="types-grid">
+          <div class="type-card" style="border-left: 4px solid #059669;">
+            <div class="type-icon"> </div>
+            <h3>安全型</h3>
+            <p>自在地建立亲密关系，信任伴侣</p>
+          </div>
+          <div class="type-card" style="border-left: 4px solid #dc2626;">
+            <div class="type-icon"> </div>
+            <h3>恐惧型</h3>
+            <p>既渴望亲密又害怕受伤</p>
+          </div>
+          <div class="type-card" style="border-left: 4px solid #d97706;">
+            <div class="type-icon"> </div>
+            <h3>专注型</h3>
+            <p>渴望亲密，担心被抛弃</p>
+          </div>
+          <div class="type-card" style="border-left: 4px solid #7c3aed;">
+            <div class="type-icon">❄️</div>
+            <h3>冷漠型</h3>
+            <p>重视独立，保持情感距离</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="test-info">
+        <div class="info-item">
+          <span class="info-number">36</span>
+          <span class="info-label">道题目</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">10</span>
+          <span class="info-label">分钟</span>
+        </div>
+        <div class="info-item">
+          <span class="info-number">2</span>
+          <span class="info-label">个维度</span>
+        </div>
+      </div>
+
+      <button class="btn-start" onclick="startTest()">开始测评</button>
+      
+      <p class="disclaimer">本测评基于ECR量表，仅供参考，不构成专业心理诊断</p>
+    </div>
+  </div>
+
+  <div id="test-page" class="page">
+    <div class="container">
+      <div class="test-header">
+        <div class="progress-info">
+          <span id="question-counter">1 / 36</span>
+          <span id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar">
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+      </div>
+
+      <div id="question-container" class="question-container">
+        <div class="question-number" id="question-number">第 1 题</div>
+        <div class="question-text" id="question-text"></div>
+        <div class="scale-container">
+          <div class="scale-label">完全<br>不同意</div>
+          <div class="scale-buttons" id="scale-buttons"></div>
+          <div class="scale-label">完全<br>同意</div>
+        </div>
+      </div>
+
+      <div class="test-navigation">
+        <button class="btn-prev" id="btn-prev" onclick="prevQuestion()" disabled>上一题</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="result-page" class="page">
+    <div class="container">
+      <div class="result-header">
+        <h1>测评结果</h1>
+      </div>
+
+      <div class="scores-card">
+        <h2>你的维度得分</h2>
+        <div class="scores-grid">
+          <div class="score-item">
+            <div class="score-label">依恋回避维度</div>
+            <div class="score-value" id="avoidance-score">0</div>
+            <div class="score-bar-container">
+              <div class="score-bar" id="avoidance-bar"></div>
+            </div>
+          </div>
+          <div class="score-item">
+            <div class="score-label">依恋焦虑维度</div>
+            <div class="score-value" id="anxiety-score">0</div>
+            <div class="score-bar-container">
+              <div class="score-bar" id="anxiety-bar"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="result-type-card" id="result-type-card">
+        <div class="result-icon" id="result-icon"></div>
+        <h2 id="result-type-name"></h2>
+        <div class="result-type-en" id="result-type-en"></div>
+        <p id="result-desc"></p>
+      </div>
+
+      <div class="characteristics-section">
+        <h2>你的特点</h2>
+        <ul id="characteristics-list"></ul>
+      </div>
+
+      <div class="advice-section">
+        <h2>成长建议</h2>
+        <ul id="advice-list"></ul>
+      </div>
+
+      <div class="result-actions">
+        <button class="btn-restart" onclick="restartTest()">重新测评</button>
+        <button class="btn-share" onclick="shareResult()">分享结果</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
