@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>沟通技巧测试</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div id="home-page">
+      <h1>沟通技巧测试</h1>
+      <p class="intro">通过这个测试了解您的沟通技巧水平。<br>本测试共20道题目，请根据您的实际情况选择最符合的选项。</p>
+      <button class="btn" onclick="startTest()">开始测试</button>
+    </div>
+    
+    <div id="test-page">
+      <div class="progress-bar">
+        <div id="progress"></div>
+      </div>
+      <div id="question-container"></div>
+    </div>
+    
+    <div id="result-page">
+      <h2>测试结果</h2>
+      <div id="result-content"></div>
+      <div class="chart-container">
+        <canvas id="chart"></canvas>
+      </div>
+      <button class="btn restart-btn" onclick="restart()">重新测试</button>
+    </div>
+  </div>
+  
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
