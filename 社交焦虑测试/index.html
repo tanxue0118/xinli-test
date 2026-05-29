@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>社交焦虑测试 - 评估你的社交焦虑程度</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <!-- 首页 -->
+    <div id="home-page" class="page home-page">
+      <h1>社交焦虑测试</h1>
+      <p class="subtitle">评估你的社交焦虑程度</p>
+      
+      <div class="description">
+        <h3>关于本测试</h3>
+        <ul>
+          <li>本测试包含20道题目，评估你的社交焦虑程度</li>
+          <li>每道题有4个选项，请选择最符合你情况的选项</li>
+          <li>测试大约需要5-8分钟完成</li>
+          <li>请根据第一直觉作答，不要过度思考</li>
+          <li>测试结果仅供参考，不代表专业诊断</li>
+        </ul>
+      </div>
+      
+      <button class="start-btn" onclick="startTest()">开始测试</button>
+    </div>
+    
+    <!-- 测试页 -->
+    <div id="test-page" class="page test-page">
+      <div class="progress-container">
+        <div id="progress-bar" class="progress-bar"></div>
+      </div>
+      
+      <div class="question-header">
+        <span class="question-counter" id="question-counter">1 / 20</span>
+      </div>
+      
+      <div class="question-card">
+        <p class="question-text" id="question-text"></p>
+      </div>
+      
+      <div class="options-container" id="options-container"></div>
+    </div>
+    
+    <!-- 结果页 -->
+    <div id="result-page" class="page result-page">
+      <div class="result-card">
+        <div class="result-header">
+          <h2>测试结果</h2>
+          <p>你的社交焦虑程度为</p>
+          <div class="result-level" id="result-level"></div>
+        </div>
+        
+        <div class="result-score-container">
+          <div class="result-score-item">
+            <div class="label">得分</div>
+            <div class="value" id="result-score"></div>
+          </div>
+          <div class="result-score-item">
+            <div class="label">得分率</div>
+            <div class="value" id="result-percentage"></div>
+          </div>
+        </div>
+        
+        <div class="chart-container">
+          <canvas id="result-chart"></canvas>
+        </div>
+        
+        <div class="result-description">
+          <h3>结果分析</h3>
+          <p id="result-description"></p>
+        </div>
+        
+        <div class="result-advice">
+          <h3>改善建议</h3>
+          <p id="result-advice"></p>
+        </div>
+        
+        <div class="result-buttons">
+          <button class="result-btn primary" onclick="restart()">重新测试</button>
+          <button class="result-btn secondary" onclick="shareResult()">分享结果</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

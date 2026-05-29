@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>心理测试合集 - 发现真实的自己</title>
-  <meta name="description" content="精选心理测试合集，包含MBTI、性取向、心理年龄等多种专业测试，帮助你更好地了解自己。">
+  <meta name="description" content="精选心理测试合集，包含MBTI、情商、焦虑、自信等多种专业测试，帮助你更好地了解自己。">
   <style>
     * {
       margin: 0;
@@ -20,7 +20,7 @@
     }
 
     .container {
-      max-width: 1000px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
@@ -56,7 +56,7 @@
     .test-card {
       background: rgba(255, 255, 255, 0.95);
       border-radius: 20px;
-      padding: 32px;
+      padding: 28px;
       text-decoration: none;
       color: #1e1b4b;
       transition: all 0.3s ease;
@@ -79,72 +79,100 @@
       height: 4px;
     }
 
-    .test-card.card-1::before { background: linear-gradient(135deg, #e11d48, #f43f5e); }
-    .test-card.card-2::before { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+    .test-card.card-1::before { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+    .test-card.card-2::before { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
     .test-card.card-3::before { background: linear-gradient(135deg, #8b5cf6, #a855f7); }
     .test-card.card-4::before { background: linear-gradient(135deg, #ec4899, #f472b6); }
-    .test-card.card-5::before { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
-    .test-card.card-6::before { background: linear-gradient(135deg, #f43f5e, #ec4899); }
-    .test-card.card-7::before { background: linear-gradient(135deg, #6366f1, #a855f7); }
-    .test-card.card-8::before { background: linear-gradient(135deg, #8b5cf6, #a855f7); }
+    .test-card.card-5::before { background: linear-gradient(135deg, #e11d48, #f43f5e); }
+    .test-card.card-6::before { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+    .test-card.card-7::before { background: linear-gradient(135deg, #10b981, #34d399); }
+    .test-card.card-8::before { background: linear-gradient(135deg, #ef4444, #f87171); }
+    .test-card.card-9::before { background: linear-gradient(135deg, #6366f1, #818cf8); }
+    .test-card.card-10::before { background: linear-gradient(135deg, #ec4899, #f472b6); }
+    .test-card.card-11::before { background: linear-gradient(135deg, #14b8a6, #2dd4bf); }
+    .test-card.card-12::before { background: linear-gradient(135deg, #f97316, #fb923c); }
+    .test-card.card-13::before { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+    .test-card.card-14::before { background: linear-gradient(135deg, #f43f5e, #fb7185); }
+    .test-card.card-15::before { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+    .test-card.card-16::before { background: linear-gradient(135deg, #10b981, #34d399); }
+    .test-card.card-17::before { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+    .test-card.card-18::before { background: linear-gradient(135deg, #8b5cf6, #a855f7); }
 
     .test-icon {
       font-size: 48px;
-      margin-bottom: 16px;
-    }
-
-    .test-card h2 {
-      font-size: 22px;
-      font-weight: 700;
       margin-bottom: 12px;
     }
 
+    .test-card h2 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
     .test-card p {
-      font-size: 14px;
+      font-size: 13px;
       color: #6b7280;
-      line-height: 1.6;
-      margin-bottom: 20px;
+      line-height: 1.5;
+      margin-bottom: 16px;
     }
 
     .test-meta {
       display: flex;
-      gap: 16px;
+      gap: 12px;
     }
 
     .meta-item {
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 13px;
+      gap: 4px;
+      font-size: 12px;
       color: #9ca3af;
     }
 
     .meta-icon {
-      font-size: 14px;
+      font-size: 12px;
     }
 
     .btn-start {
       display: inline-block;
-      padding: 10px 24px;
-      border-radius: 10px;
-      font-size: 14px;
+      padding: 8px 20px;
+      border-radius: 8px;
+      font-size: 13px;
       font-weight: 600;
       color: white;
-      margin-top: 16px;
+      margin-top: 12px;
       transition: all 0.3s ease;
     }
 
-    .card-1 .btn-start { background: linear-gradient(135deg, #e11d48, #f43f5e); }
-    .card-2 .btn-start { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+    .card-1 .btn-start { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
+    .card-2 .btn-start { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
     .card-3 .btn-start { background: linear-gradient(135deg, #8b5cf6, #a855f7); }
     .card-4 .btn-start { background: linear-gradient(135deg, #ec4899, #f472b6); }
-    .card-5 .btn-start { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
-    .card-6 .btn-start { background: linear-gradient(135deg, #f43f5e, #ec4899); }
-    .card-7 .btn-start { background: linear-gradient(135deg, #6366f1, #a855f7); }
-    .card-8 .btn-start { background: linear-gradient(135deg, #8b5cf6, #a855f7); }
+    .card-5 .btn-start { background: linear-gradient(135deg, #e11d48, #f43f5e); }
+    .card-6 .btn-start { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+    .card-7 .btn-start { background: linear-gradient(135deg, #10b981, #34d399); }
+    .card-8 .btn-start { background: linear-gradient(135deg, #ef4444, #f87171); }
+    .card-9 .btn-start { background: linear-gradient(135deg, #6366f1, #818cf8); }
+    .card-10 .btn-start { background: linear-gradient(135deg, #ec4899, #f472b6); }
+    .card-11 .btn-start { background: linear-gradient(135deg, #14b8a6, #2dd4bf); }
+    .card-12 .btn-start { background: linear-gradient(135deg, #f97316, #fb923c); }
+    .card-13 .btn-start { background: linear-gradient(135deg, #8b5cf6, #a78bfa); }
+    .card-14 .btn-start { background: linear-gradient(135deg, #f43f5e, #fb7185); }
+    .card-15 .btn-start { background: linear-gradient(135deg, #3b82f6, #60a5fa); }
+    .card-16 .btn-start { background: linear-gradient(135deg, #10b981, #34d399); }
+    .card-17 .btn-start { background: linear-gradient(135deg, #f59e0b, #fbbf24); }
+    .card-18 .btn-start { background: linear-gradient(135deg, #8b5cf6, #a855f7); }
 
     .test-card:hover .btn-start {
       transform: translateX(4px);
+    }
+
+    .section-title {
+      color: white;
+      font-size: 24px;
+      font-weight: 700;
+      margin: 40px 0 20px;
+      text-shadow: 0 2px 4px rgba(0,0,0,0.2);
     }
 
     .footer {
@@ -181,7 +209,7 @@
       }
 
       .test-card {
-        padding: 24px;
+        padding: 20px;
       }
     }
   </style>
@@ -194,11 +222,12 @@
       <p>探索内心世界，发现真实的自己</p>
     </div>
 
+    <h2 class="section-title">  人格与关系测试</h2>
     <div class="tests-grid">
-      <a href="MBTI测试/index.html" class="test-card card-2">
+      <a href="MBTI测试/index.html" class="test-card card-1">
         <div class="test-icon"> </div>
         <h2>MBTI人格测试</h2>
-        <p>通过专业的MBTI测试，了解你的16种人格类型，发现你的性格特点和潜力。包含简约版和详细版两种模式。</p>
+        <p>了解你的16种人格类型，发现你的性格特点和潜力</p>
         <div class="test-meta">
           <span class="meta-item"><span class="meta-icon"> </span> 36/120题</span>
           <span class="meta-item"><span class="meta-icon">⏱️</span> 8-25分钟</span>
@@ -206,65 +235,21 @@
         <div class="btn-start">开始测试 →</div>
       </a>
 
-      <a href="心理年龄测试/index.html" class="test-card card-3">
+      <a href="依恋类型测试/index.html" class="test-card card-2">
         <div class="test-icon"> </div>
-        <h2>心理年龄测试</h2>
-        <p>了解你的心理成熟度，发现你的心智年龄与实际年龄的差异，帮助你更好地认识自己。</p>
+        <h2>依恋类型测试</h2>
+        <p>了解你的依恋类型：安全型、焦虑型、回避型、恐惧型</p>
         <div class="test-meta">
-          <span class="meta-item"><span class="meta-icon"> </span> 30题</span>
-          <span class="meta-item"><span class="meta-icon">⏱️</span> 6分钟</span>
-        </div>
-        <div class="btn-start">开始测试 →</div>
-      </a>
-
-      <a href="性取向测试/index.html" class="test-card card-4">
-        <div class="test-icon"> </div>
-        <h2>性取向测试</h2>
-        <p>了解真实的自己，探索你的性取向。测试设计尊重包容，帮助你更好地认识自己的情感需求。</p>
-        <div class="test-meta">
-          <span class="meta-item"><span class="meta-icon"> </span> 30题</span>
+          <span class="meta-item"><span class="meta-icon"> </span> 35题</span>
           <span class="meta-item"><span class="meta-icon">⏱️</span> 8分钟</span>
         </div>
         <div class="btn-start">开始测试 →</div>
       </a>
 
-      <a href="贝姆心理性别测试/index.html" class="test-card card-5">
-        <div class="test-icon"> </div>
-        <h2>贝姆心理性别角色测试</h2>
-        <p>经典的心理性别角色测试，了解你的男性化和女性化特质，发现你的性别角色类型。</p>
-        <div class="test-meta">
-          <span class="meta-item"><span class="meta-icon"> </span> 60题</span>
-          <span class="meta-item"><span class="meta-icon">⏱️</span> 15分钟</span>
-        </div>
-        <div class="btn-start">开始测试 →</div>
-      </a>
-
-      <a href="性压抑测试/index.html" class="test-card card-1">
-        <div class="test-icon"> </div>
-        <h2>性压抑测试</h2>
-        <p>了解你对性的态度和压抑程度，探索你在性方面的心理状态，帮助你建立更健康的性观念。</p>
-        <div class="test-meta">
-          <span class="meta-item"><span class="meta-icon"> </span> 25题</span>
-          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
-        </div>
-        <div class="btn-start">开始测试 →</div>
-      </a>
-
-      <a href="恋爱占有欲测试/index.html" class="test-card card-6">
-        <div class="test-icon"> </div>
-        <h2>恋爱占有欲指数测试</h2>
-        <p>了解你在恋爱中的占有欲程度，探索你对伴侣的态度，帮助你建立更健康的亲密关系。</p>
-        <div class="test-meta">
-          <span class="meta-item"><span class="meta-icon"> </span> 30题</span>
-          <span class="meta-item"><span class="meta-icon">⏱️</span> 6分钟</span>
-        </div>
-        <div class="btn-start">开始测试 →</div>
-      </a>
-
-      <a href="ECR依恋测试/index.html" class="test-card card-7">
+      <a href="ECR依恋测试/index.html" class="test-card card-3">
         <div class="test-icon"> </div>
         <h2>ECR亲密关系经历量表</h2>
-        <p>基于专业ECR量表，评估你的依恋类型：安全型、恐惧型、专注型、冷漠型，了解你在亲密关系中的行为模式。</p>
+        <p>基于专业ECR量表，评估你的依恋类型</p>
         <div class="test-meta">
           <span class="meta-item"><span class="meta-icon"> </span> 36题</span>
           <span class="meta-item"><span class="meta-icon">⏱️</span> 10分钟</span>
@@ -272,13 +257,173 @@
         <div class="btn-start">开始测试 →</div>
       </a>
 
-      <a href="依恋类型测试/index.html" class="test-card card-8">
+      <a href="贝姆心理性别测试/index.html" class="test-card card-4">
         <div class="test-icon"> </div>
-        <h2>依恋类型测试</h2>
-        <p>通过35道专业测评题目，深入了解你的依恋类型：安全型、焦虑型、回避型、恐惧型，揭示你的情感关系特质。</p>
+        <h2>贝姆心理性别角色测试</h2>
+        <p>了解你的男性化和女性化特质</p>
         <div class="test-meta">
-          <span class="meta-item"><span class="meta-icon"> </span> 35题</span>
+          <span class="meta-item"><span class="meta-icon"> </span> 60题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 15分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="性取向测试/index.html" class="test-card card-5">
+        <div class="test-icon"> </div>
+        <h2>性取向测试</h2>
+        <p>了解真实的自己，探索你的性取向</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 30题</span>
           <span class="meta-item"><span class="meta-icon">⏱️</span> 8分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="恋爱占有欲测试/index.html" class="test-card card-6">
+        <div class="test-icon"> </div>
+        <h2>恋爱占有欲指数测试</h2>
+        <p>了解你在恋爱中的占有欲程度</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 30题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 6分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+    </div>
+
+    <h2 class="section-title">  情绪与心理测试</h2>
+    <div class="tests-grid">
+      <a href="情商测试/index.html" class="test-card card-7">
+        <div class="test-icon"> </div>
+        <h2>情商测试</h2>
+        <p>评估你的情绪智力水平</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="社交焦虑测试/index.html" class="test-card card-8">
+        <div class="test-icon"> </div>
+        <h2>社交焦虑测试</h2>
+        <p>评估你的社交焦虑程度</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="自信心测试/index.html" class="test-card card-9">
+        <div class="test-icon"> </div>
+        <h2>自信心测试</h2>
+        <p>评估你的自信程度</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="幸福感测试/index.html" class="test-card card-10">
+        <div class="test-icon"> </div>
+        <h2>幸福感测试</h2>
+        <p>评估你的幸福指数</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="压力指数测试/index.html" class="test-card card-11">
+        <div class="test-icon"> </div>
+        <h2>压力指数测试</h2>
+        <p>评估你的压力水平</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="情绪管理测试/index.html" class="test-card card-12">
+        <div class="test-icon"> </div>
+        <h2>情绪管理测试</h2>
+        <p>评估你的情绪管理能力</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+    </div>
+
+    <h2 class="section-title">  行为与认知测试</h2>
+    <div class="tests-grid">
+      <a href="拖延症测试/index.html" class="test-card card-13">
+        <div class="test-icon"> </div>
+        <h2>拖延症测试</h2>
+        <p>评估你的拖延程度</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="完美主义测试/index.html" class="test-card card-14">
+        <div class="test-icon"> </div>
+        <h2>完美主义测试</h2>
+        <p>评估你的完美主义倾向</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="人际关系测试/index.html" class="test-card card-15">
+        <div class="test-icon"> </div>
+        <h2>人际关系测试</h2>
+        <p>评估你的人际关系质量</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="自我价值感测试/index.html" class="test-card card-16">
+        <div class="test-icon"> </div>
+        <h2>自我价值感测试</h2>
+        <p>评估你的自我价值感</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 20题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="心理年龄测试/index.html" class="test-card card-17">
+        <div class="test-icon"> </div>
+        <h2>心理年龄测试</h2>
+        <p>了解你的心理成熟度</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 30题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 6分钟</span>
+        </div>
+        <div class="btn-start">开始测试 →</div>
+      </a>
+
+      <a href="性压抑测试/index.html" class="test-card card-18">
+        <div class="test-icon"> </div>
+        <h2>性压抑测试</h2>
+        <p>了解你对性的态度和压抑程度</p>
+        <div class="test-meta">
+          <span class="meta-item"><span class="meta-icon"> </span> 25题</span>
+          <span class="meta-item"><span class="meta-icon">⏱️</span> 5分钟</span>
         </div>
         <div class="btn-start">开始测试 →</div>
       </a>
