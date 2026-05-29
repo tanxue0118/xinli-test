@@ -26,7 +26,7 @@ function startTest() {
 function showQuestion() {
   const question = questions[currentQuestion];
   document.getElementById('question-text').textContent = question.question;
-  document.getElementById('question-counter').textContent = ${currentQuestion + 1} / ;
+  document.getElementById('question-counter').textContent = `${currentQuestion + 1} / ${questions.length}`;
   
   const optionsContainer = document.getElementById('options-container');
   optionsContainer.innerHTML = '';
@@ -58,7 +58,7 @@ function selectOption(index) {
 
 function updateProgress() {
   const progress = (currentQuestion / questions.length) * 100;
-  document.getElementById('progress-bar').style.width = ${progress}%;
+  document.getElementById('progress-bar').style.width = `${progress}%`;
 }
 
 function showResult() {
@@ -130,7 +130,7 @@ function drawChart(percentage) {
   ctx.font = 'bold 32px Arial';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
-  ctx.fillText(${Math.round(percentage)}%, centerX, centerY);
+  ctx.fillText(`${Math.round(percentage)}%`, centerX, centerY);
 }
 
 function restart() {
@@ -140,11 +140,11 @@ function restart() {
 function shareResult() {
   const level = document.getElementById('result-level').textContent;
   const percentage = document.getElementById('result-percentage').textContent;
-  const text = 我在的评价，得分！;
+  const text = `我在幸福感测试中获得了${level}的评价，得分${percentage}！`;
   
   if (navigator.share) {
     navigator.share({
-      title: '',
+      title: '幸福感测试结果',
       text: text
     });
   } else {
